@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://my-platescout.vecel.app", // tmp
+    "https://342-a8.vercel.app/",
     /\.vercel\.app$/,
   ],
   credentials: true,
