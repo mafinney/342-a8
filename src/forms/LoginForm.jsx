@@ -3,6 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import "./Forms.css";
 
+const base_url = import.meta.env.VITE_API_BASE_URL || "https://localhost:3000";
+
 // Assignment 7 — Login route.
 // Same shape as A6, but the "already logged in?" check now looks at
 // localStorage.token (not .User), and the success handler saves BOTH the
@@ -38,7 +40,7 @@ function LoginForm() {
     }
 
     try {
-      const response = await fetch(`${VITE_API_BASE_URL}/api/login`, {
+      const response = await fetch(`${base_url}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
