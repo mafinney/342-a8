@@ -10,7 +10,10 @@ export default async function searchBusinesses(term, location, sortBy) {
         limit: "20",
     });
 
-    const res = await fetch(`${SEARCH_PATH}?${params}`);
+    const res = await fetch(`${SEARCH_PATH}?${params}`, {
+        method: "GET",
+        headers: { "Authorization": `Bearer ${env.VITE_YELP_KEY}` },
+    });
 
     if (!res.ok) {
         console.log("res not ok");
