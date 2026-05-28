@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
 					},
 				},
 				'/api': {
-					target: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000',
+					target: 'https://platescout-matthew-finney.onrender.com',
 					changeOrigin: true,
 				},
 			},
