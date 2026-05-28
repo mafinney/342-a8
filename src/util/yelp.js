@@ -1,6 +1,6 @@
 import Business from "../components/Business/Business";
 
-const SEARCH_PATH = "/api/yelp/businesses/search";
+const SEARCH_PATH = "https://api.yelp.com/v3/api/yelp/businesses/search";
 
 export default async function searchBusinesses(term, location, sortBy) {
     const params = new URLSearchParams({

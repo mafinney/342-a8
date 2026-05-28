@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
+const base_url = import.meta.env.VITE_API_BASE_URL || "https://localhost:3000";
+
 // Assignment 7 — Profile route.
 // Reads the logged-in user from localStorage and renders their info.
 // Logout now calls the server's /api/logout endpoint with the bearer token
@@ -36,7 +38,7 @@ function Profile() {
     const token = localStorage.getItem("token");
     
     try {
-      const response = await fetch("/api/logout", {
+      const response = await fetch(`${base_url}/api/logout`, {
         method: "POST",
         Authorization: "Bearer " + { token },
       });
