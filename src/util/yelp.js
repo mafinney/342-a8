@@ -12,7 +12,7 @@ export default async function searchBusinesses(term, location, sortBy) {
 
     const res = await fetch(`${SEARCH_PATH}?${params}`, {
         method: "GET",
-        headers: { "Authorization": `Bearer ${env.VITE_YELP_KEY}` },
+        headers: { "Authorization": `Bearer ${import.meta.env.VITE_YELP_KEY}` },
     });
 
     if (!res.ok) {
